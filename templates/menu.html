@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .jumbotron{
+        color:brown;
+        font-style:
+    }
+    div{
+        text-transform:uppercase;
+        }
+    #a{
+        text-decoration:underline;
+        font-weight:bold;
+        text-align:center;
+        letter-spacing:2px;
+        color:#db4035;
+         font-family: "Times New Roman", Times, serif;
+    }
+    #b{
+        text-decoration:underline;
+        font-weight:bold;
+        text-align:center;
+        letter-spacing:2px;
+        color:#24669c;
+    },
+
+
+</style>
+<script>
+    function alertFunction() {
+ alert("Hi!, we have taken your order. Please Click on the 'OK' Button.");
+}
+</script>
+
+            
+    <div class="container">
+	<header class="jumbotron">
+		<div id="king" class="container text-center" >
+			<h1 id="main" class="text-uppercase">
+				Menu Page 
+			</h1>
+			<!-- <p>
+				<a href='/addfood' class="btn btn-primary btn-large">Add your Food Menu..</a>
+			</p> -->
+				</div>
+	</header>
+    
+		<div class="row" style="display:flex; flex-wrap:wrap;">
+            {% for objs in obj %}
+				<div class="col-md-3 col-sm-6">
+					<div class="thumbnail">
+                        <img src="{{objs.image.url}}">
+						<div class="caption">
+
+								<h4 id="a">
+									{{objs.food}}
+								</h4>
+                            <h4 >
+                                Type   -:<b >{{objs.item}}</b>
+								</h4>
+                            <h4 >
+									Restaurent is <i id="b">{{objs.restaurent}}</i>
+								</h4>
+                            <h4 >
+									Rate-:  <strong >Rs-{{objs.price}}</strong>
+								</h4>
+                            
+                            
+								{% if user.is_authenticated is False %}
+								<p>
+									<a href="/login" class="btn btn-success">Order</a>
+								</p>
+                                {% elif user.is_authenticated and user.is_superuser is False %}
+                                <p><a href="{% url 'orders' ab=objs.id %}" onclick="alertFunction()" name="alert" class="btn                                     btn-success">Order</a></p>
+                                {% endif %}
+                         </div>     
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+    </div>
+{% endblock %}

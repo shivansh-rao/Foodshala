@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    h1{
+        color:white;
+    }
+    table,tr{
+        background-color:lightyellow;
+        text-align:center;
+        width:100%;
+        
+    }
+    #t{
+        height:50%;
+    }
+    #main{
+        font-size:50px;
+        color:#4a2e48;
+        }
+</style>
+<div class="container">
+    <header class="jumbotron">
+		<div id="king" class="container text-center" >
+			<h1 id="main" class="text-uppercase">
+				Orders for {{restaurent}}
+			</h1>
+			
+				</div>
+	</header>
+<table border="2">
+	<tr id="t">
+        <th>Name</th>
+		<th>Email</th>
+        <th>Order</th>
+	</tr>
+    {% for f in rip %}
+        {%for o in ob%}
+            {%ifequal o.food f.id %}
+                {%for us in user%}
+                    {% ifequal us.id o.cust %}
+                        <tr>
+                            <td><b>{{us.username}}</b></td>
+                            <td>{{us.email}}</td>
+                            <td><b>{{f.food}}</b></td>
+                        </tr> 
+                    {%endifequal%}
+                {%endfor%}
+            {%endifequal%}
+        {%endfor%}
+    {%endfor%}
+</table>
+</div>
+{%endblock%}

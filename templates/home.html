@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+        #a{
+                font-size:400%;
+            }
+</style>
+           
+        <div class="container">
+		    <div class="row">
+			    <div class="col-lg-12">
+				    <div id="content">
+				        <h1 id="a">FOODSHALA</h1>
+				        <h3>Taste the Best</h3>
+				        <hr>
+                            <form action='/admin'>
+                            <button  class="btn btn-primary btn-lg btn-block"><span class="fa fa-hotel">                                            </span>Restaurent</button>
+                            </form>
+				
+                           <form action='/login'>
+                            <button  class="btn btn-primary btn-lg btn-block"><span class="fas fa-hamburger">                                    </span>Customer</button>
+                            </form> 
+                        
+                            <div>
+                                <form action='/menu'>
+                                    <button  class="btn btn-default btn-lg "><span class="fas fa-pizza-slice">                                                </span>Food Menu</button>            
+                                </form>
+                            </div>
+                                {%if user.is_superuser %}
+                                <div>
+                                    <form action='/showorders'>
+                                    <button  class="btn btn-default btn-lg "><span class="fi-list-bullet">                                                </span>Show The Orders</button>
+                                    </form>
+                                </div>
+                                {%endif%}
+			    </div>
+		       </div>
+	        </div>
+       </div>
+            {% endblock %}
