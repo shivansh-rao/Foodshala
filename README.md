@@ -15,10 +15,10 @@ A python and django powered web application.
 
 #### [Install and activate virtual-environment
 
- pip install virtualenv
- virtualenv your_environment_name
- cd your_environment_name
-source your_environment_name/bin/activate
+ -  pip install virtualenv
+ -  virtualenv your_environment_name
+ -  cd your_environment_name
+ -  source your_environment_name/bin/activate
 
 #### Import project in virtualenv
 
