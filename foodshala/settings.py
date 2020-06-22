@@ -80,8 +80,8 @@ WSGI_APPLICATION = 'foodshala.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'USER':'root',
-        'PASSWORD':'1234',
+        'USER':'####',
+        'PASSWORD':'######',
         'NAME': 'sys',
         'HOST':'localhost',
         'PORT':'3306',        
