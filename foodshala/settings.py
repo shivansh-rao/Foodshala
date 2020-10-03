@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'nuk#5fcn&3y0err42i=uf2_u%!yxg7r6)5)8yna3jh@6db=rni'
+SECRET_KEY = '%%%%%%%%%%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,8 +80,8 @@ WSGI_APPLICATION = 'foodshala.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'USER':'####',
-        'PASSWORD':'######',
+        'USER':'',
+        'PASSWORD':'',
         'NAME': 'sys',
         'HOST':'localhost',
         'PORT':'3306',        
